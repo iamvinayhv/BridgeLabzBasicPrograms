@@ -1,3 +1,5 @@
+//For perticular Number
+
 class PowerOfTwo
 {
 	public static void main(String[]args)

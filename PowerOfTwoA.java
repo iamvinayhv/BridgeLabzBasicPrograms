@@ -1,10 +1,11 @@
-class PowerOfTwo2
+// up to the perticular number
+class PowerOfTwoA
 {
 	public static void main(String[]args)
 	{
 		
 		int n=Integer.parseInt(args[0]);
-		if(n>=1&&<31)
+		if(n>=1&&n<31)
 		{
 		for(int i=0;i<n;i++)
 		{
