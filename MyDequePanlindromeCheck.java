@@ -1,10 +1,10 @@
 import java.util.*;
-class MyDequeMain
+class MyDequePanlindromeCheck
 {
 	public static void  main(String[]args)
 	{	
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter to check palindrome or not");
+		System.out.println("Enter the String to check palindrome or not");
 		
 		String st=sc.next();
 
@@ -31,14 +31,16 @@ class MyDequeMain
 			char c=m.removeFront();
 			Sout=Sout+c;
 		}
-		System.out.println("Reversed - "+Sout);
+
+		System.out.println("Entered  String - "+st);
+		System.out.println("Reversed String - "+Sout);
 		if(st.equals(Sout))
 		{
-			System.out.println("Palindrome ");
+			System.out.println("Palindrome String");
 		}
 		else
 		{
-			System.out.println("not a palindrome ");
+			System.out.println("Not a palindrome String");
 		}
 
 	}
