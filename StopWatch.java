@@ -1,67 +1,48 @@
+package com.BridgeLabz.Basics;
+
 import java.util.Scanner;
-class StopWatch extends Thread
+
+public class StopWatch 
 {
-public static void main(String[]args)
-{
-
-Scanner sc=new Scanner(System.in);
-System.out.println("Press \"S\" for start");
-String s=sc.next();
-
-char cs=s.charAt(0);
-
-if(cs=='s')
-{
-
-int i=0;
-int k=0;
-int c=0;
-
-
-for(i=0;i<1000;i++)
-{
-try
-{
-Thread.sleep(1000);
-}
-catch(Exception e)
-{
-System.out.print("Inturupt"); 
-}
-System.out.print(c+":"+i%60+":");
-
-for(k=0;k<10;k++)
-{
-try
-{
-Thread.sleep(10);
-}
-catch(Exception e)
-{
-System.out.print("Inturupt"); 
-}
-System.out.print(k%10);
-
-}
-System.out.println();
-
-if(i==59)
-{
-c++;
-}
+	long start;
+	long end;
+	long timeTaken;
+	
+	public void startTimmer()
+	{
+		start=System.nanoTime();
+	}
+	
+	public void stopTimmer()
+	{
+		end=System.nanoTime();
+	}
+	
+	public long elapsedTime()
+	{
+		timeTaken=end-start;
+		return timeTaken;
+	}
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		StopWatch sw=new StopWatch();
+		
+		System.out.println("Press any key to Start Start watch");
+		sc.nextLine();
+		
+		sw.startTimmer();
+		
+		System.out.println("Press any key to Start Stop watch");
+		sc.nextLine();
+		
+		sw.stopTimmer();
+		
+		System.out.println("Time taken ="+sw.elapsedTime());
+	}
 
 
-}
-try{}
-finally
-{
-System.out.println("Time taken = "+c+":"+i+":"+k);
-}
-
-}
-
-else
-System.out.println("Try onece again!!!");
-
-}
 }
