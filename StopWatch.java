@@ -1,4 +1,4 @@
-package com.BridgeLabz.Basics;
+//package com.BridgeLabz.Basics;
 
 import java.util.Scanner;
 

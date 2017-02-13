@@ -45,7 +45,7 @@ System.out.print(k%10);
 }
 System.out.println();
 
-if(i==59)
+if(i==59||i==119||i==179||i==239||i==299||359||419)
 {
 c++;
 }
