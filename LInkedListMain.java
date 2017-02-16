@@ -24,13 +24,12 @@ public class LInkedListMain {
 		System.out.println("These elements are added into the list");
 		ll.disp();
 		
-		System.out.println("Enter the word to search");
+		System.out.println("\nEnter the word to search");
 		String word=sc.nextLine();
 		
 		
 		boolean res=ll.Search(word);
 		
-		String[]navi=str;
 		
 		
 		if(res)
@@ -45,12 +44,30 @@ public class LInkedListMain {
 			System.out.println(word+" Not Found and added into List");
 			ll.insert(word);
 			ll.disp();
-			//navi[navi.length]=word;
 			
 		}
 		
-		f.addToFile(navi);
 		
+		System.out.println("\nEnter the word to insert");
+		String insert=sc.nextLine();
+		
+		System.out.println("Enter the position");
+		int pos=sc.nextInt();
+		
+		
+		boolean in=ll.insertAtIndex(insert, pos);
+		if(in)
+			System.out.println("Inserted Sucessfully!!!  at position "+pos);
+		
+		ll.disp();
+		
+		
+		
+		String update=ll.rep;
+		if(f.addToFile(update))
+		{
+			System.out.println("\nFile has been Updated");
+		}
 		
 	}
 	

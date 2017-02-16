@@ -39,22 +39,72 @@ public class LinkedList
 	}
 	
 	
+	public boolean insertAtIndex(String st,int pos)
+	{
+		Node my=new Node(st);
+		
+		if(pos==0)
+		{
+			Node t=head;
+			head=my;
+			head.next=t;
+			return true;
+		}
+		
+		int i=0;
+		Node prevNode=null;
+		Node currNode=head;
+		
+		while(i<pos)
+		{
+			Node temp;
+			prevNode=currNode;
+			currNode=currNode.next;
+			
+			if(i==pos-1)
+			{
+				temp=currNode.next;
+				prevNode.next=my;
+			}
+			
+			
+			i++;
+		}
+		prevNode=prevNode.next;;
+		//System.out.println(currNode);
+		//System.out.println(prevNode);
+		
+		while(currNode != null)
+		{
+			//System.out.println(currNode);
+			
+			prevNode.next=currNode;
+			
+			prevNode=prevNode.next;
+			//System.out.println(prevNode.next);
+			
+			currNode=currNode.next;
+		}
+		
+		return true;
+	}
 	
 	
 	
+	String rep;
 	public void disp()
 	{
+		rep="";
 		Node t=head;
 		while(t!=null)
 		{
 			System.out.print(t.data+"--->");
+			rep=rep+t.data+",";
 			t=t.next;
 		}
 		System.out.println();
 		
 	}
-	
-	
 	
 	
 	
@@ -74,8 +124,6 @@ public class LinkedList
 		}
 		return false;
 	}
-	
-	
 	
 	
 	
@@ -100,8 +148,5 @@ public class LinkedList
 			prevNode.next = currNode.next;
 		return currNode.data;
 	}
-	
-	
-	
 	
 }

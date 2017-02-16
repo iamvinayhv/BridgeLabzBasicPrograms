@@ -49,26 +49,22 @@ public class LinkedListFile
 	
 	}
 	
-	public void addToFile(String[]str)
+	public boolean addToFile(String str)
 	{
-		String Srt = "";
-
-		for (int i = 0; i < str.length; i++) 
+		
+		try 
 		{
-			Srt = Srt + str[i] + ",";
-		}
-		
-		
-
-		try {
-			
 			fw = new FileWriter("/home/bridgeit/vinay/LinkedListFile/Write.txt", false);
 			fw.write("");
-			fw.write(Srt);
+			fw.write(str);
 			fw.flush();
 			fw.close();
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
+		
+		return true;
 	}
 }
