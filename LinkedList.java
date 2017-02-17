@@ -50,6 +50,11 @@ public class LinkedList
 			head.next=t;
 			return true;
 		}
+		else if(pos==size())
+		{
+			System.out.println("hai");
+			insert(st);
+		}
 		
 		int i=0;
 		Node prevNode=null;
@@ -147,6 +152,21 @@ public class LinkedList
 		} 
 			prevNode.next = currNode.next;
 		return currNode.data;
+	}
+	
+	
+	public int size()
+	{
+		int j=0;
+		
+		Node t=head;
+		
+		while(t!=null)
+		{
+			j++;
+			t=t.next;
+		}
+		return j;
 	}
 	
 }

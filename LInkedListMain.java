@@ -31,7 +31,6 @@ public class LInkedListMain {
 		boolean res=ll.Search(word);
 		
 		
-		
 		if(res)
 		{
 			System.out.println(word+" Foud at the index:"+ll.i);
@@ -53,7 +52,7 @@ public class LInkedListMain {
 		
 		System.out.println("Enter the position");
 		int pos=sc.nextInt();
-		
+		System.out.println(ll.size());
 		
 		boolean in=ll.insertAtIndex(insert, pos);
 		if(in)
@@ -68,6 +67,9 @@ public class LInkedListMain {
 		{
 			System.out.println("\nFile has been Updated");
 		}
+		
+		int s=ll.size();
+		System.out.println("Size="+s);
 		
 	}
 	
