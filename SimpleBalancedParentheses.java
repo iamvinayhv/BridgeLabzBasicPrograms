@@ -6,14 +6,24 @@ public class SimpleBalancedParentheses {
 
 	public static void main(String[] args) 
 	{
-		
 		Scanner sc=new Scanner(System.in);
+		
+		StopWatch s=new StopWatch();
+		System.out.println("Press any key to Start Start watch");
 		System.out.println("Enter the String to check its Balanced or Not");
 		String str=sc.nextLine();
+		
+		s.startTimmer();
+		
+		
+		
+		
+		
 		
 		char[]ch1=str.toCharArray();
 		
 		String str2="";
+		int h=0;
 		
 		for(int i=0;i<str.length();i++)
 		{
@@ -40,6 +50,7 @@ public class SimpleBalancedParentheses {
 			
 			else if((ch[i]=='('||ch[i]=='{'||ch[i]=='[')&&(!st.empty())&&i==ch.length-1)
 			{
+				h++;
 				System.out.println("String is Not Balanced");
 				return;
 			}
@@ -55,7 +66,7 @@ public class SimpleBalancedParentheses {
 				char c=  (char) st.pop();
 				
 				if((ch[i]==')'&&c=='(')||(ch[i]=='}'&&c=='{')||(ch[i]==']'&&c=='['))
-				{
+				{h++;
 					if(st.empty()&&i==ch.length-1)
 						System.out.println("String is Balanced");
 				}
@@ -78,7 +89,10 @@ public class SimpleBalancedParentheses {
 			
 			
 		}
-		
+		if(h==0)
+			System.out.println("String is Balanced");
+		s.stopTimmer();
+		System.out.println("Time taken ="+s.elapsedTime()+"nano secs");
 	}
 
 }
